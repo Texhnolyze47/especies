@@ -1,3 +1,43 @@
+const animalContainer = document.querySelector(".animal-container");
+
+const fetchAnimal = (name) =>{
+   fetch(`https://api-omar-oceanrisk.herokuapp.com/animals/name/${name}`)
+   .then(res => res.json())
+   .then(data => {
+    console.log(data);
+    createAnimalCard(data)
+   });
+  
+}
+
+
+const createAnimalCard = (animals) => {
+    const card = document.createElement('div');
+    card.classList.add('animal-block')
+
+    const imgContainer = document.createElement('div');
+    imgContainer.classList.add('img-container');
+
+    const img = document.createElement('img');
+    img.src = "https://es.wikipedia.org/wiki/Archivo:Anim1754_-_Flickr_-_NOAA_Photo_Library.jpg";
+
+    imgContainer.appendChild(img);
+
+    const name = document.createElement('p');
+    name.classList.add('name');
+    name.textContent = animals.name
+
+    card.appendChild(imgContainer);
+    card.appendChild(name);
+
+    animalContainer.appendChild(card);
+
+}
+
+
+fetchAnimal("Ballena azul");
+
+
 $(document).ready(function(){
     $('.menu a').each(function(index, elemento){
         $(this).css({
