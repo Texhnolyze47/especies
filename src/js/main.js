@@ -19,13 +19,13 @@ const createAnimalCard = (animals) => {
     imgContainer.classList.add('img-container');
 
     const img = document.createElement('img');
-    img.src = "https://es.wikipedia.org/wiki/Archivo:Anim1754_-_Flickr_-_NOAA_Photo_Library.jpg";
+    img.src = animals[0].img;
 
     imgContainer.appendChild(img);
 
     const name = document.createElement('p');
     name.classList.add('name');
-    name.textContent = animals.name
+    name.textContent = animals[0].name
 
     card.appendChild(imgContainer);
     card.appendChild(name);
@@ -35,7 +35,7 @@ const createAnimalCard = (animals) => {
 }
 
 
-fetchAnimal("Ballena azul");
+fetchAnimal();
 
 
 $(document).ready(function(){

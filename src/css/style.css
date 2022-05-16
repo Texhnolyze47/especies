@@ -216,8 +216,20 @@ header h3 {
 }
 
 .animal-block {
-  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  padding: 10px;
+  -webkit-box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+          box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+}
+
+.animal-block p {
+  margin: 5px;
+  font-family: "Fredoka", sans-serif;
   text-align: center;
+}
+
+.img-container {
+  background-position: center;
 }
 
 .animal-container {
